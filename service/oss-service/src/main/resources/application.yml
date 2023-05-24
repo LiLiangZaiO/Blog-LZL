@@ -1,0 +1,18 @@
+server:
+  port: 9004
+spring:
+  servlet:
+    multipart:
+      max-request-size: 100MB
+      max-file-size: 100MB
+  jackson: #返回json的全局时间格式
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+#阿里云 OSS
+#不同的服务器，地址不同  --后面都需要用到这些值，所以放到这里
+aliyun.oss.file.endpoint: oss-cn-guangzhou.aliyuncs.com
+aliyun.oss.file.keyid: LTAI5tDAeUMEJVWsgPQCSa2K
+aliyun.oss.file.keysecret: iPTWPYiEATLaN9rRGZLWXkj6deM5Fl
+#bucket可以在控制台创建，也可以使用java代码创建
+aliyun.oss.file.bucketname: blog-lzl
+aaa: 22

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lzl.blogservice.mapper.BlogMapper">
+
+    <update id="increaseViewCount">
+        UPDATE blog set view_count=view_count+1 where id=#{blogId}
+    </update>
+    <update id="thumbsUpBlog">
+        UPDATE blog set thumbs_count=thumbs_count+#{judge} where id=#{blogId}
+    </update>
+    <select id="getArchiveList" resultType="com.lzl.blogservice.entity.Vo.ArchivesFrontVo">
+        select id,title,create_time from blog where status = 1 order by create_time desc
+    </select>
+</mapper>
